@@ -9,7 +9,7 @@ const projects = (await getCollection('projects')).sort((a, b) => {
 });
 
 const description =
-  'Portfolio of Lokeswaran DK, a software and full stack engineer with about two years of experience, looking for roles in India.';
+  'Software Engineer with 2 years of experience building full-stack infrastructure tooling and developer platforms, working across Java, React/TypeScript, and cloud-scale systems at Oracle Cloud Infrastructure (OCI).';
 ---
 
 <BaseLayout title="Lokeswaran DK — Software / Full Stack Engineer" description={description}>
@@ -17,9 +17,10 @@ const description =
     <section id="hero" aria-labelledby="hero-heading">
       <h1 id="hero-heading">Lokeswaran DK</h1>
       <p class="role">Software / Full Stack Engineer</p>
-      <p class="lede">About two years of experience. Looking for roles in India.</p>
-      <p class="todo">
-        <strong>TODO:</strong> Replace this with a short personal bio.
+      <p class="bio">
+        Software Engineer with 2 years of experience building full-stack infrastructure tooling and developer
+        platforms, working across Java, React/TypeScript, and cloud-scale systems at Oracle Cloud Infrastructure
+        (OCI).
       </p>
       <p class="actions">
         <a class="button" href="#projects">Projects</a>
@@ -43,74 +44,109 @@ const description =
 
     <section id="skills" aria-labelledby="skills-heading">
       <h2 id="skills-heading">Skills</h2>
-      <p class="section-intro">Technologies used in the work published on this site.</p>
       <ul class="skill-groups">
         <li>
-          <h3>Language</h3>
-          <ul>
-            <li>TypeScript</li>
-          </ul>
+          <h3>Languages</h3>
+          <p>Java, TypeScript, Python, SQL</p>
         </li>
         <li>
-          <h3>Web UI</h3>
-          <ul>
-            <li>React</li>
-            <li>Vite</li>
-            <li>TanStack Query</li>
-          </ul>
+          <h3>Frontend</h3>
+          <p>React, HTML, CSS</p>
         </li>
         <li>
-          <h3>Server</h3>
-          <ul>
-            <li>Node.js</li>
-            <li>Fastify</li>
-            <li>REST</li>
-            <li>Server-sent events</li>
-            <li>Zod</li>
-          </ul>
+          <h3>Backend</h3>
+          <p>Node.js, Dropwizard, Fastify</p>
         </li>
         <li>
-          <h3>Data</h3>
-          <ul>
-            <li>SQLite</li>
-            <li>Knex</li>
-          </ul>
+          <h3>Testing</h3>
+          <p>Jest, Cucumber.js</p>
         </li>
         <li>
-          <h3>Delivery</h3>
-          <ul>
-            <li>Docker Compose</li>
-            <li>npm workspaces</li>
-            <li>GitHub Actions</li>
-          </ul>
+          <h3>Tools</h3>
+          <p>Docker, Terraform, Git, OCI</p>
+        </li>
+        <li>
+          <h3>Certificates</h3>
+          <p>LangChain and LangGraph (Aug 2026)</p>
         </li>
       </ul>
     </section>
 
     <section id="experience" aria-labelledby="experience-heading">
       <h2 id="experience-heading">Experience</h2>
-      <p>Software / Full Stack Engineer with about two years of experience, looking for roles in India.</p>
-      <p class="todo">
-        <strong>TODO:</strong> Add each role — title, employer, and dates. No employers are listed yet.
-      </p>
+      <article class="role-block" aria-labelledby="role-mts1">
+        <h3 id="role-mts1">Oracle, Bengaluru, Member of Technical Staff 1, Jul 2024 to Apr 2026.</h3>
+        <div class="project-group">
+          <h4>Service Visibility &amp; Capacity Management</h4>
+          <ul>
+            <li>
+              built a service-level visibility tool giving leadership real-time capacity usage and available limits
+              to catch capacity risks in new regions
+            </li>
+            <li>
+              aggregated 5 data sources across 5 service teams for faster detection of Out of Capacity errors
+            </li>
+          </ul>
+        </div>
+        <div class="project-group">
+          <h4>Compute Admin Portal Modernization</h4>
+          <ul>
+            <li>
+              migrated features from a legacy SSR portal to a region-agnostic Java Dropwizard + React/TypeScript
+              portal
+            </li>
+            <li>built 5+ reusable data grid and form components used across 10+ pages</li>
+            <li>
+              implemented the mapping layer of a redirection framework routing legacy pages into the new portal
+            </li>
+            <li>
+              reduced the bug backlog by 15% (50 bugs) and delivered 20+ features and improvements for SREs
+            </li>
+          </ul>
+        </div>
+        <div class="project-group">
+          <h4>AI-Driven Test Automation</h4>
+          <ul>
+            <li>CLI workflow PoC that uses LLMs to generate Compute API tests</li>
+            <li>extended the test observability dashboard with runtime and resource metrics</li>
+            <li>restructured log storage into per-test folders</li>
+          </ul>
+        </div>
+      </article>
+      <article class="role-block" aria-labelledby="role-intern">
+        <p id="role-intern">
+          Oracle, Bengaluru, Summer Intern, May to Jun 2023: Canary Engine, an automated authorization-testing
+          framework for OCI Compute APIs (Java, OCI Java SDK, Terraform), with Minimal and Exhaustive execution
+          modes.
+        </p>
+      </article>
+    </section>
+
+    <section id="education" aria-labelledby="education-heading">
+      <h2 id="education-heading">Education</h2>
+      <p>B.Tech CSE, NIT Tiruchirappalli, Dec 2020 to May 2024.</p>
     </section>
 
     <section id="contact" aria-labelledby="contact-heading">
       <h2 id="contact-heading">Contact</h2>
       <dl class="contact-list">
         <div>
-          <dt>GitHub</dt>
+          <dt>Email</dt>
           <dd>
-            <a href="https://github.com/DKLokeswaran" rel="me">DKLokeswaran</a>
+            <a href="mailto:lokeswarankandasamy12@gmail.com">lokeswarankandasamy12@gmail.com</a>
           </dd>
         </div>
         <div>
-          <dt>Email</dt>
-          <dd class="todo"><strong>TODO:</strong> add an email address</dd>
+          <dt>LinkedIn</dt>
+          <dd>
+            <a href="https://linkedin.com/in/lokeswaran-dk">https://linkedin.com/in/lokeswaran-dk</a>
+          </dd>
         </div>
         <div>
-          <dt>LinkedIn</dt>
-          <dd class="todo"><strong>TODO:</strong> add a LinkedIn profile URL</dd>
+          <dt>GitHub</dt>
+          <dd>
+            <a href="https://github.com/DKLokeswaran" rel="me">https://github.com/DKLokeswaran</a>
+          </dd>
         </div>
       </dl>
     </section>

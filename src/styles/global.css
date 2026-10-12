@@ -210,13 +210,14 @@ a:hover {
   font-size: 1.25rem;
 }
 
-.lede,
+.bio,
 .section-intro,
 .summary {
   max-width: 65ch;
 }
 
-.lede {
+.bio {
+  margin-top: 1rem;
   font-size: 1.15rem;
 }
 
@@ -365,6 +366,55 @@ section + section {
 .skill-groups ul {
   margin: 0;
   padding-left: 1.15rem;
+}
+
+.skill-groups p {
+  margin: 0;
+}
+
+.role-block {
+  margin-top: 1.25rem;
+  padding: 1.25rem 1.35rem;
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+}
+
+.role-block + .role-block {
+  margin-top: 1rem;
+}
+
+.role-block > h3 {
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.project-group {
+  margin-top: 1rem;
+}
+
+.project-group h4 {
+  margin: 0 0 0.35rem;
+  font-family: var(--sans);
+  font-size: 0.98rem;
+  font-weight: 600;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.project-group ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  max-width: 68ch;
+}
+
+.project-group li + li {
+  margin-top: 0.35rem;
+}
+
+#education p {
+  max-width: 65ch;
 }
 
 .contact-list {
