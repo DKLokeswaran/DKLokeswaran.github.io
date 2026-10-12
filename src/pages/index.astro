@@ -1,0 +1,118 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const projects = (await getCollection('projects')).sort((a, b) => {
+  if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1;
+  return a.data.order - b.data.order;
+});
+
+const description =
+  'Portfolio of Lokeswaran DK, a software and full stack engineer with about two years of experience, looking for roles in India.';
+---
+
+<BaseLayout title="Lokeswaran DK — Software / Full Stack Engineer" description={description}>
+  <main id="content" class="shell">
+    <section id="hero" aria-labelledby="hero-heading">
+      <h1 id="hero-heading">Lokeswaran DK</h1>
+      <p class="role">Software / Full Stack Engineer</p>
+      <p class="lede">About two years of experience. Looking for roles in India.</p>
+      <p class="todo">
+        <strong>TODO:</strong> Replace this with a short personal bio.
+      </p>
+      <p class="actions">
+        <a class="button" href="#projects">Projects</a>
+        <a class="button button-quiet" href="https://github.com/DKLokeswaran" rel="me">GitHub</a>
+      </p>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+      <p class="section-intro">Public repositories.</p>
+      {
+        projects.length === 0 ? (
+          <p>No projects published yet.</p>
+        ) : (
+          <div class="project-list">
+            {projects.map((project) => <ProjectCard project={project} />)}
+          </div>
+        )
+      }
+    </section>
+
+    <section id="skills" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
+      <p class="section-intro">Technologies used in the work published on this site.</p>
+      <ul class="skill-groups">
+        <li>
+          <h3>Language</h3>
+          <ul>
+            <li>TypeScript</li>
+          </ul>
+        </li>
+        <li>
+          <h3>Web UI</h3>
+          <ul>
+            <li>React</li>
+            <li>Vite</li>
+            <li>TanStack Query</li>
+          </ul>
+        </li>
+        <li>
+          <h3>Server</h3>
+          <ul>
+            <li>Node.js</li>
+            <li>Fastify</li>
+            <li>REST</li>
+            <li>Server-sent events</li>
+            <li>Zod</li>
+          </ul>
+        </li>
+        <li>
+          <h3>Data</h3>
+          <ul>
+            <li>SQLite</li>
+            <li>Knex</li>
+          </ul>
+        </li>
+        <li>
+          <h3>Delivery</h3>
+          <ul>
+            <li>Docker Compose</li>
+            <li>npm workspaces</li>
+            <li>GitHub Actions</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section id="experience" aria-labelledby="experience-heading">
+      <h2 id="experience-heading">Experience</h2>
+      <p>Software / Full Stack Engineer with about two years of experience, looking for roles in India.</p>
+      <p class="todo">
+        <strong>TODO:</strong> Add each role — title, employer, and dates. No employers are listed yet.
+      </p>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+      <dl class="contact-list">
+        <div>
+          <dt>GitHub</dt>
+          <dd>
+            <a href="https://github.com/DKLokeswaran" rel="me">DKLokeswaran</a>
+          </dd>
+        </div>
+        <div>
+          <dt>Email</dt>
+          <dd class="todo"><strong>TODO:</strong> add an email address</dd>
+        </div>
+        <div>
+          <dt>LinkedIn</dt>
+          <dd class="todo"><strong>TODO:</strong> add a LinkedIn profile URL</dd>
+        </div>
+      </dl>
+    </section>
+  </main>
+</BaseLayout>

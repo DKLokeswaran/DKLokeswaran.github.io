@@ -1,0 +1,46 @@
+<button type="button" id="theme-toggle" aria-pressed="false">Use dark theme</button>
+<script is:inline>
+  (() => {
+    const button = document.getElementById('theme-toggle');
+    if (!button) return;
+    const root = document.documentElement;
+    const media = matchMedia('(prefers-color-scheme: dark)');
+
+    const sync = () => {
+      const dark = root.dataset.theme === 'dark';
+      button.setAttribute('aria-pressed', String(dark));
+      button.textContent = dark ? 'Use light theme' : 'Use dark theme';
+    };
+
+    const storedTheme = () => {
+      try {
+        return localStorage.getItem('theme');
+      } catch {
+        return null;
+      }
+    };
+
+    if (!root.dataset.theme) {
+      root.dataset.theme = media.matches ? 'dark' : 'light';
+    }
+    sync();
+
+    button.addEventListener('click', () => {
+      const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = next;
+      try {
+        localStorage.setItem('theme', next);
+      } catch {
+        /* The choice still applies for this page view. */
+      }
+      sync();
+    });
+
+    media.addEventListener('change', (event) => {
+      const stored = storedTheme();
+      if (stored === 'light' || stored === 'dark') return;
+      root.dataset.theme = event.matches ? 'dark' : 'light';
+      sync();
+    });
+  })();
+</script>
